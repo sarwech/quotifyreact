@@ -28,9 +28,9 @@ class Quotes extends React.Component {
   render() {
     return (
       <div className="quoteBox">
-        <p className="time"></p>
-        <p>{quotes[0].content}</p>
-        <p>- {quotes[0].film}</p>
+        <p className="time">{this.time}</p>
+        <p>{quotes[this.random].content}</p>
+        <p>- {quotes[this.random].film}</p>
         <button onClick={newQuote()}>New Quote</button>
       </div>
 
