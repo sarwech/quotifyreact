@@ -12,34 +12,35 @@ class App extends Component {
   }
 }
 
-var quotes = [{
-  content: 'Frankly, my dear, I don\'t give a damn',
-  film: 'Gone With The Wind'
-  }, {
-  content: 'No frikkin way',
-  film: 'Made Up'
-  }
-];
-
-var random = Math.floor(Math.random() * quotes.length);
-console.log(random)
-// var quotes = [
-//   'Frankly, my dear, I don\'t give a damn',
-//   'Gone With The Wind',
-//   ];
+const time = new Date();
+console.log(time)
 
 class Quotes extends React.Component {
-  _newQuote() {
-    this.setState({
-      quote: quotes[random]
-    })
+  handleClick(e) {
+    e.preventDefault();
+    alert("Hi")
   }
   render() {
-    const {quote} = this.state
+    const quotes = [{
+      content: 'Frankly, my dear, I don\'t give a damn',
+      film: 'Gone With The Wind'
+      }, {
+      content: 'No frikkin way',
+      film: 'Made Up'
+      }
+    ];
+    const each = quotes.map((quotes, index) => {
+      return (
+        <h1 key={index}>{quotes.content} - {quotes.film}</h1>
+        )
+    });
+    const randomNum = Math.floor(Math.random()*quotes.length);
+    console.log(randomNum);
+    // const {quote} = this.state
     return (
       <div className="quoteBox">
-        <p className="quotes">{quote.content}</p>
-        <button onClick={() => this._newQuote()}>New Quote</button>
+        {each[randomNum]}
+        <button onClick={this.handleClick}>New Quote</button>
       </div>
     )
   }
