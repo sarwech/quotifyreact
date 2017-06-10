@@ -18,7 +18,7 @@ console.log(time)
 class Quotes extends React.Component {
   handleClick(e) {
     e.preventDefault();
-    alert("Hi")
+    this.forceUpdate();
   }
   render() {
     const quotes = [{
@@ -31,7 +31,10 @@ class Quotes extends React.Component {
     ];
     const each = quotes.map((quotes, index) => {
       return (
-        <h1 key={index}>{quotes.content} - {quotes.film}</h1>
+        <div id="quoteBox">
+          <h1 key="content_{index}">{quotes.content}</h1>
+          <p key="film_{index}">- {quotes.film}</p>
+        </div>
         )
     });
     const randomNum = Math.floor(Math.random()*quotes.length);
@@ -40,9 +43,9 @@ class Quotes extends React.Component {
     return (
       <div className="quoteBox">
         {each[randomNum]}
-        <button onClick={this.handleClick}>New Quote</button>
+        <button onClick={this.handleClick.bind(this)}>New Quote</button>
       </div>
-    )
+    );
   }
 }
 
