@@ -14,8 +14,4 @@ class App extends Component {
   }
 }
 
-const time = new Date();
-console.log(time);
-
-
 export default App;
