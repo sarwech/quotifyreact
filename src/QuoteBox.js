@@ -10,6 +10,9 @@ class QuoteBox extends Component {
 	_getRandomNum() {
     return Math.floor(Math.random()*(this.props.quotes.length -1));
 	}
+	handleClickTweet() {
+		window.location = `https://twitter.com/intent/tweet?text=${this.props.quotes[this._getRandomNum()].content}`;
+	}
   handleClick(event) {
     this.setState({ randomNum: this._getRandomNum() })
   }
@@ -22,6 +25,7 @@ class QuoteBox extends Component {
           <h1>{quotes.content}</h1>
           <p>- {quotes.film}</p>
         </div>
+				<button onClick={this.handleClickTweet.bind(this)}>TWEET</button>
         <button onClick={this.handleClick.bind(this)}>New Quote</button>
       </div>
     );

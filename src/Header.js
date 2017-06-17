@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Header extends Component {
+
+
 	_getTime() {
 		const time = new Date();
 		const h = time.getHours();
@@ -20,7 +22,7 @@ class Header extends Component {
 
 		return (
 			<div className="Header">
-				<h1>NEW - TWEET - {this._getTime()}</h1>
+				<h1>{this._getTime()}</h1>
 			</div>
 			);
 	};
