@@ -42,11 +42,28 @@ const quotes = [{
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: new Date()
+    };
+    this.state = { randomNum: this._getQuote() }
+  }
+
+  _getQuote() {
+    this.setState( { quote: quotes[Math.floor(Math.random()*(quotes.length -1))] } );
+  }
+
+  componentDidMount() {
+    this._getQuote();
+    setInterval(() => this.setState( { time: new Date() }),1000)
+  }
+
   render() {
     return (
       <div className="App">
-        <Header/>
-        <QuoteBox quotes={quotes} />
+        <Header time={new Date()}/>
+        <QuoteBox onClick={() => this._getQuote()} quote={this.state.quote} />
       </div>
     );
   }

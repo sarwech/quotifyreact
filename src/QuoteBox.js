@@ -5,28 +5,21 @@ import './App.css';
 class QuoteBox extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { randomNum: this._getRandomNum() }
 	}
-	_getRandomNum() {
-    return Math.floor(Math.random()*(this.props.quotes.length -1));
-	}
-	handleClickTweet() {
-		window.location = `https://twitter.com/intent/tweet?text=${this.props.quotes[this._getRandomNum()].content}`;
-	}
-  handleClick(event) {
-    this.setState({ randomNum: this._getRandomNum() })
-  }
+	// handleClickTweet() {
+	// 	window.location = `https://twitter.com/intent/tweet?text=${this.props.quotes[this._getRandomNum()].content}`;
+	// }
   render() {
 
-    const quotes = this.props.quotes[this._getRandomNum()]
-    return (
+    const quote = this.props.quote;
+    return !quote ? <div /> : (
       <div className="quoteBox">
         <div id="quoteBox">
-          <h1>{quotes.content}</h1>
-          <p>- {quotes.film}</p>
+          <h1>{quote.content}</h1>
+          <p>- {quote.film}</p>
         </div>
-				<button onClick={this.handleClickTweet.bind(this)}>TWEET</button>
-        <button onClick={this.handleClick.bind(this)}>New Quote</button>
+				<button onClick={this.handleClickTweet}>TWEET</button>
+        <button onClick={() => this.props.onClick()}>New Quote</button>
       </div>
     );
   }

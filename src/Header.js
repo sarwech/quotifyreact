@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-
-class Header extends Component {
-
-
-	_getTime() {
-		const time = new Date();
+export const getTime = time => {
 		const h = time.getHours();
 		const m = time.getMinutes();
 		const s = time.getSeconds();
-		const hour = this._addZero(h);
-	  const min = this._addZero(m);
-	  const sec = this._addZero(s);
-		return `${hour}:${min}:${sec}`;
-	}
-	_addZero(i) {
-		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-		return i;
-	}
-	render() {
-
-		return (
-			<div className="Header">
-				<h1>{this._getTime()}</h1>
-			</div>
-			);
-	};
+		// const hour = this._addZero(h);
+	 //  const min = this._addZero(m);
+	 //  const sec = this._addZero(s);
+		return `${h}:${m}:${s}`;
 };
+
+export const Header = props => (
+		<div className="Header">
+			<h1>{getTime(props.time)}</h1>
+		</div>
+	)
+
+// class Header extends Component {
+
+// 	// _addZero(i) {
+// 	// 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+// 	// 	return i;
+// 	// }
+// 	render() {
+
+// 		return (
+// 			<div className="Header">
+// 				<h1>{this._getTime()}</h1>
+// 			</div>
+// 			);
+// 	};
+// };
 
 export default Header;
