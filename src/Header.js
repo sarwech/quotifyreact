@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 export const getTime = time => {
-		const h = time.getHours();
-		const m = time.getMinutes();
-		const s = time.getSeconds();
-		// const hour = this._addZero(h);
-	 //  const min = this._addZero(m);
-	 //  const sec = this._addZero(s);
-		return `${h}:${m}:${s}`;
+		let h = time.getHours();
+		let m = time.getMinutes();
+		let s = time.getSeconds();
+		const hour = h < 10 ? h = `0${h}` : h;
+	  const min = m < 10 ? m = `0${m}` : m;
+	  const sec = s < 10 ? s = `0${s}` : s;
+		return `Time is ${hour}:${min}:${s}`;
 };
 
 export const Header = props => (
@@ -18,10 +18,10 @@ export const Header = props => (
 
 // class Header extends Component {
 
-// 	// _addZero(i) {
-// 	// 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-// 	// 	return i;
-// 	// }
+	// _addZero(i) {
+	// 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	// 	return i;
+	// }
 // 	render() {
 
 // 		return (
