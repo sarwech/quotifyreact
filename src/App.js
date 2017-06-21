@@ -54,6 +54,10 @@ class App extends Component {
     this.setState( { quote: quotes[Math.floor(Math.random()*(quotes.length -1))] } );
   }
 
+  _handleClickTweet() {
+     window.location = `https://twitter.com/intent/tweet?text=${this.state.quote.content}`;
+   }
+
   componentDidMount() {
     this._getQuote();
     setInterval(() => this.setState( { time: new Date() }),1000)
@@ -63,7 +67,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header time={new Date()}/>
-        <QuoteBox onClick={() => this._getQuote()} quote={this.state.quote} />
+        <QuoteBox onClick={() => this._getQuote()} quote={this.state.quote} onTweet={() => this._handleClickTweet()} />
       </div>
     );
   }
