@@ -17,6 +17,8 @@ class QuoteBox extends Component {
         </div>
 				<button onClick={() => this.props.onTweet()}>Tweet</button>
         <button onClick={() => this.props.onClick()}>New Quote</button>
+        <hr/>
+			  <p><a href="https://github.com/sarwech/mealplanner">Sarwech Shar</a></p>
       </div>
     );
   }

@@ -66,6 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Random Quote Generator</h1>
         <Header time={new Date()}/>
         <QuoteBox onClick={() => this._getQuote()} quote={this.state.quote} onTweet={() => this._handleClickTweet()} />
       </div>
