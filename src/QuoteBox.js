@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
 class QuoteBox extends Component {
-	constructor(props) {
-		super(props)
-	}
+	// constructor(props) {
+	// 	super(props)
+	// }
 	
   render() {
 
@@ -16,7 +15,7 @@ class QuoteBox extends Component {
           <h1>{quote.content}</h1>
           <p>- {quote.film}</p>
         </div>
-				<button onClick={() => this.props.onTweet()}>TWEET</button>
+				<button onClick={() => this.props.onTweet()}>Tweet</button>
         <button onClick={() => this.props.onClick()}>New Quote</button>
       </div>
     );

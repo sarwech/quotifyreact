@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   _handleClickTweet() {
-     window.location = `https://twitter.com/intent/tweet?text=${this.state.quote.content}`;
+     window.location = `https://twitter.com/intent/tweet?text="${this.state.quote.content}"%20-%20${this.state.quote.film}`;
    }
 
   componentDidMount() {
