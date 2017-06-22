@@ -35,3 +35,11 @@ body {
 .quoteBox {
   margin-top: 250px;
 }
+
+button {
+  width: 100px;
+  background-color: #2980b9;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0px 5px;
+}
