@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+
 export const getTime = time => {
 	let days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 	let d = time.getDay();
@@ -15,7 +16,8 @@ export const getTime = time => {
 
 export const Header = props => (
 		<div className="Header">
-			<h1>{getTime(props.time)}</h1>
+			<h1>Random Quote Generator</h1>
+			<h2>{getTime(props.time)}</h2>
 		</div>
 	)
 

@@ -18,7 +18,7 @@
   font-size: large;
 }
 
-.Header {
+h2 {
   margin-top: 75px;
   margin-bottom: -75px;
   color: #95a5a6;
@@ -36,6 +36,13 @@ body {
 
 .quoteBox {
   margin-top: 250px;
+}
+
+p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 button {
