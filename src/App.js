@@ -45,9 +45,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: new Date()
+      time: new Date(),
+      randomQuote: this._getQuote() 
     };
-    this.state = { randomNum: this._getQuote() }
   }
 
   _getQuote() {
@@ -60,13 +60,13 @@ class App extends Component {
 
   componentDidMount() {
     this._getQuote();
-    setInterval(() => this.setState( { time: new Date() }),1000)
+    setInterval(() => this.setState( { time: new Date() }), 1000)
   };
 
   render() {
     return (
       <div className="App">
-        <Header time={new Date()}/>
+        <Header time={this.state.time}/>
         <QuoteBox onClick={() => this._getQuote()} quote={this.state.quote} onTweet={() => this._handleClickTweet()} />
       </div>
     );

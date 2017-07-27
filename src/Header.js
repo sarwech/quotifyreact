@@ -21,20 +21,4 @@ export const Header = props => (
 		</div>
 	)
 
-// class Header extends Component {
-
-	// _addZero(i) {
-	// 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-	// 	return i;
-	// }
-// 	render() {
-
-// 		return (
-// 			<div className="Header">
-// 				<h1>{this._getTime()}</h1>
-// 			</div>
-// 			);
-// 	};
-// };
-
 export default Header;

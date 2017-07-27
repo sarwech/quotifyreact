@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 class QuoteBox extends Component {
-	// constructor(props) {
-	// 	super(props)
-	// }
-	
   render() {
-
     const quote = this.props.quote;
     return !quote ? <div /> : (
       <div className="quoteBox">
